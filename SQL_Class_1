@@ -1,1 +1,46 @@
 
+CREATE DATABASE test;
+
+CREATE DATABASE test_new;
+
+DROP DATABASE test_new;
+
+USE test;
+
+---- Command to create a TABLE
+CREATE TABLE IF NOT EXISTS employee
+(
+    id INT,
+    name VARCHAR(50)
+);
+
+SHOW TABLES;
+
+SHOW CREATE TABLE employee;
+
+DROP TABLE employee;
+
+CREATE TABLE IF NOT EXISTS employee
+(
+    id INT,
+    name varchar(50),
+    salary DOUBLE,
+    hiring_date DATE
+);
+
+---- Syntax 1 To insert data into TABLE
+INSERT INTO employee VALUES(1,'Asif',1000,'2021-09-15');
+
+INSERT INTO employee VALUES('Asif',1,1000,'2021-09-15');
+
+---- Syntax 2 To insert data into a TABLE
+INSERT INTO employee(salary,name,id) VALUES(2000,'Asif',2);
+
+---- Insert multiple rows using single insert statement
+insert into employee values(3,'Amit',3000,'2021-09-15'), 
+                            (4,'Niting',3500,'2021-09-16'), 
+                            (5,'Kajal',4000,'2021-09-20');
+
+SELECT * FROM employee;
+
+SELECT id, name FROM employee;
